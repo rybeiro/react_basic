@@ -1,3 +1,45 @@
+# React basic
+Trata-se de um aplicativo simples para compreesão do uso do React
+
+## Requisitos mínimos
+- nodejs lts
+- Visual studio code ou editor de sua preferência.
+- Dica de extensões: Code Runner, Dracula oficial theme, Material icon theme, Emmet
+
+# Criando o primeiro projeto
+```javascript
+npx create-react-app nome-projeto
+```
+
+# Criando o primeiro componente
+```javascript
+// src/componentes/Comentario.js
+import React from 'react';
+
+const Comentario = () => (
+  <div>
+    Meu primeiro componente
+  </div>
+);
+
+export default Comentario;
+
+// src/App.js
+import './App.css';
+import Comentario from './componentes/Comentario';
+function App() {
+  return (
+    <div className="App">
+      <div>Meu primeiro projeto</div>
+      <Comentario />
+    </div>
+  );
+}
+
+export default App;
+
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
