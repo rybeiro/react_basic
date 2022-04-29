@@ -68,6 +68,48 @@ const Comentario = (props) => (
 // ... código omitido
 
 ```
+# State
+State permite que nosso componente seja inteligente. Os componentes que contém state são chamados de _Statefull_ e os componentes que contém apenas propriedades são chamados de _Stateless_
+
+```javascript
+// código omitido
+// primeiro passo transformamos nossa função em classe
+class App extends Component {
+// assim criamos o state, que é um objeto
+  state = {
+    comentario: [
+      {
+        nome: "Maria",
+        email: 'maria@maria.com',
+        data: new Date(2022, 1, 5),
+        mensagem: 'Olá, como você está?'
+      },
+      {
+        nome: "João Fernandez",
+        email: "joao@fernandez.com",
+        data: new Date(2022, 1, 5),
+        mensagem: 'Yep, sim...'
+      }
+    ]
+  }
+// incluí o rende para renderizar o conteúdo
+  render(){
+    return (
+      <div className="App">
+        <div>Meu primeiro projeto</div>
+        {
+          this.state.comentario.map(comentario => {
+            return <Comentario nome={comentario.nome} email={comentario.email} data={comentario.data}>
+              {comentario.mensagem}
+            </Comentario>
+          })
+        }
+      </div>
+    );
+  }
+}
+  // código omitido
+```
 
 
 
