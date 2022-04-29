@@ -12,6 +12,8 @@ npx create-react-app nome-projeto
 ```
 
 # Criando o primeiro componente
+Criando o primeiro compontente, exportando e importando.
+
 ```javascript
 // src/componentes/Comentario.js
 import React from 'react';
@@ -37,8 +39,37 @@ function App() {
 }
 
 export default App;
+```
+
+# Propriedade
+Como passar propriedades para os componentes
+```javascript
+// src/App.js
+// ... código omitido
+// as propriedades devem ser passadas como se fossem atributos de uma tag
+ <Comentario nome="João Fernandez" email="joao@fernandez.com" data={new Date(2022, 1, 5)}>
+    Olá, como você está?
+  </Comentario>
+// ... código omitido
+
+// src/componentes/Comentario.js
+// ... código omitido`
+// utilizamos a palavra props para recebermos essas propriedades por parâmentro em nosso componente Comentario.js
+// um detalhe para pegar o conteúdo da mensagem que foi passado dentro da tag <Comentario> utilizamos a propriedade
+// children
+const Comentario = (props) => (
+  <div className="Comentario">
+    <div>{props.nome}</div>
+    <div>{props.email}</div>
+    <div>{props.children}</div>
+    <div>{props.data.toString()}</div>
+  </div>
+);
+// ... código omitido
 
 ```
+
+
 
 # Getting Started with Create React App
 
