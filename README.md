@@ -68,7 +68,7 @@ const Comentario = (props) => (
 // ... código omitido
 
 ```
-# State
+# State | Estado
 State permite que nosso componente seja inteligente. Os componentes que contém state são chamados de _Statefull_ e os componentes que contém apenas propriedades são chamados de _Stateless_
 
 ```javascript
@@ -111,7 +111,36 @@ class App extends Component {
   // código omitido
 ```
 
+# Manipulação de estado
+Para manipular um state | estado podemos utilizamos a função _setState()_ do _Component_.
 
+```javascript
+// vamos incluir um novo comentário
+// Primeiro vamos inserir o botão
+render(){
+    return (
+      <div className="App">
+        <div>Meu primeiro projeto</div>
+        {/* ...codigo acima omitido. Ah, isso é um comentário javascript dentro do render */}
+        <button onClick={this.newComment}>novo comentário</button>
+      </div>
+    );
+  }
+}
+
+// agora criaremos uma função
+newComment () => {
+  let comment = {
+    nome: "Fernandez Sousa",
+    email: "fernandez@fernandez.com",
+    data: new Date(),
+    mensagem: 'Novo comentário'
+  }
+
+  // utilizando a função setState, junto com spreed operator
+  this.setState({comentario: [...this.state.comentario, comment]})
+}
+```
 
 # Getting Started with Create React App
 
